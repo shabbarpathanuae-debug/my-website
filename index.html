@@ -1,10 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My First Page</title>
+  <meta charset="UTF-8">
+  <title>My Portfolio Website</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+      background: rgba(0,0,0,0.25);
+    }
+
+    header img {
+      width: 80px;
+      border-radius: 50%;
+      border: 3px solid white;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      padding: 50px 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+    }
+
+    p {
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: white;
+      color: #764ba2;
+    }
+
+    button:hover {
+      background: #f1f1f1;
+    }
+
+    .cards {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 50px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.15);
+      padding: 20px;
+      width: 250px;
+      border-radius: 15px;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 15px;
+      background: rgba(0,0,0,0.25);
+      font-size: 14px;
+    }
+
+    /* 📱 Mobile Responsive */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      nav a {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Hello World 👋</h1>
-  <p>VS Code successfully installed!</p>
+
+  <header>
+    <!-- Logo Image -->
+    <img src="https://via.placeholder.com/150" alt="Logo">
+    <h2>Zakir's Website</h2>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Welcome 👋</h1>
+    <p>
+      I am learning Web Development using HTML, CSS and JavaScript.
+      This is my first responsive portfolio website 🚀
+    </p>
+
+    <button onclick="showMessage()">Click Me</button>
+
+    <div class="cards">
+      <div class="card">
+        <h3>HTML</h3>
+        <p>Structure of website</p>
+      </div>
+      <div class="card">
+        <h3>CSS</h3>
+        <p>Design & styling</p>
+      </div>
+      <div class="card">
+        <h3>JavaScript</h3>
+        <p>Logic & interaction</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 | Made by Zakir ❤️
+  </footer>
+
+  <script>
+    function showMessage() {
+      alert("🎉 Button clicked! JavaScript is working!");
+    }
+  </script>
+
 </body>
 </html>
