@@ -2,109 +2,130 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Portfolio Website</title>
+  <title>Zakir | Professional Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    * {
-      box-sizing: border-box;
+    :root {
+      --bg: #ffffff;
+      --text: #222;
+      --primary: #6c63ff;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #f1f1f1;
+      --primary: #bb86fc;
     }
 
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: white;
-      text-align: center;
+      background: var(--bg);
+      color: var(--text);
+      transition: 0.3s;
     }
 
     header {
-      padding: 20px;
-      background: rgba(0,0,0,0.25);
-    }
-
-    header img {
-      width: 80px;
-      border-radius: 50%;
-      border: 3px solid white;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 100;
     }
 
     nav {
-      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    nav h2 {
+      color: var(--primary);
     }
 
     nav a {
-      color: white;
-      margin: 0 12px;
+      margin: 0 10px;
       text-decoration: none;
+      color: var(--text);
       font-weight: bold;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: var(--primary);
     }
 
-    .container {
-      padding: 50px 20px;
-    }
-
-    h1 {
-      font-size: 42px;
-    }
-
-    p {
-      max-width: 600px;
-      margin: auto;
-      line-height: 1.6;
+    .toggle {
+      cursor: pointer;
       font-size: 18px;
     }
 
-    button {
-      margin-top: 25px;
-      padding: 12px 30px;
-      border: none;
-      border-radius: 30px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      background: white;
-      color: #764ba2;
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease;
     }
 
-    button:hover {
-      background: #f1f1f1;
+    .hero {
+      background: linear-gradient(135deg, #6c63ff, #9f7aea);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+    }
+
+    .hero button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      background: white;
+      color: #6c63ff;
+      font-weight: bold;
     }
 
     .cards {
       display: flex;
-      gap: 20px;
       justify-content: center;
+      gap: 20px;
       flex-wrap: wrap;
-      margin-top: 50px;
     }
 
     .card {
-      background: rgba(255,255,255,0.15);
+      background: rgba(0,0,0,0.05);
       padding: 20px;
       width: 250px;
       border-radius: 15px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
     }
 
     footer {
-      margin-top: 60px;
-      padding: 15px;
-      background: rgba(0,0,0,0.25);
+      padding: 20px;
+      background: #f1f1f1;
+      text-align: center;
       font-size: 14px;
     }
 
-    /* 📱 Mobile Responsive */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 32px;
-      }
+    body.dark footer {
+      background: #1f1f1f;
+    }
 
-      nav a {
-        display: block;
-        margin: 8px 0;
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
       }
     }
   </style>
@@ -112,53 +133,56 @@
 
 <body>
 
-  <header>
-    <!-- Logo Image -->
-    <img src="https://via.placeholder.com/150" alt="Logo">
-    <h2>Zakir's Website</h2>
-
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Projects</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
-
-  <div class="container">
-    <h1>Welcome 👋</h1>
-    <p>
-      I am learning Web Development using HTML, CSS and JavaScript.
-      This is my first responsive portfolio website 🚀
-    </p>
-
-    <button onclick="showMessage()">Click Me</button>
-
-    <div class="cards">
-      <div class="card">
-        <h3>HTML</h3>
-        <p>Structure of website</p>
-      </div>
-      <div class="card">
-        <h3>CSS</h3>
-        <p>Design & styling</p>
-      </div>
-      <div class="card">
-        <h3>JavaScript</h3>
-        <p>Logic & interaction</p>
-      </div>
+<header>
+  <nav>
+    <h2>Zakir</h2>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <span class="toggle" onclick="toggleMode()">🌙</span>
     </div>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <h1>Hello, I'm Zakir 👋</h1>
+  <p>Web Developer in making 🚀</p>
+  <button onclick="alert('Thanks for visiting!')">Hire Me</button>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am learning HTML, CSS and JavaScript.
+    This is my professional responsive website.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>My Skills</h2>
+  <div class="cards">
+    <div class="card">HTML</div>
+    <div class="card">CSS</div>
+    <div class="card">JavaScript</div>
   </div>
+</section>
 
-  <footer>
-    © 2026 | Made by Zakir ❤️
-  </footer>
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: example@email.com</p>
+</section>
 
-  <script>
-    function showMessage() {
-      alert("🎉 Button clicked! JavaScript is working!");
-    }
-  </script>
+<footer>
+  © 2026 | Zakir | All Rights Reserved
+</footer>
+
+<script>
+  function toggleMode() {
+    document.body.classList.toggle("dark");
+  }
+</script>
 
 </body>
 </html>
